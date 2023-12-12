@@ -1,0 +1,105 @@
+@host=http://127.0.0.1:5001/api/v1/user
+
+GET {{host}}
+
+###
+POST  {{host}}
+
+###
+POST  {{host}}/register/single
+Content-Type: application/json
+
+{
+    "email":"1Ram@siyaram.com",
+    "username":"2Siya ram",
+    "password":"212345",
+    "mobile":"2999999999"
+}
+
+###
+POST  {{host}}/register/multiple
+Content-Type: application/json
+
+[{
+    "name":{"fname":"Siya","mname":"Ram","lname":"Ram"},
+    "email":"1Ram@siyaram.com",
+    "username":"2Siya ram",
+    "gender":"Male",
+    "category":"Others",
+    "dob":"2019-12-13",
+    "age":14,
+    "address":{"address1":"abc1","address2":"abc2","address3":"abc3","city":"ABC","district":"Jaunpur","state":"Up","country":"India","pin":"123456"},
+    "password":"212345",
+    "confirmPassword":"212345",
+    "mobile":"1999999990",
+    "limit":2,
+    "secretQuestion":["a","b"],
+    "custom":"test1"
+}]
+
+###
+POST  {{host}}/schemaValidation
+Content-Type: application/json
+
+{
+    "user":{"name": "Siya" , "email":"1Ram@siyaram.com"  }, 
+    "address":{"street":"abc1","city":"ABC", "state":"Up"  }
+} 
+
+###
+POST  {{host}}/schemaValidation
+Content-Type: application/json
+
+[{
+    "name":{"fname":"Siya","mname":"Ram","lname":"Ram"},
+    "email":"1Ram@siyaram.com",
+    "username":"2Siya ram",
+    "gender":"Male",
+    "category":"Others",
+    "dob":"2019-12-13",
+    "age":14,
+    "address":{"address1":"abc1","address2":"abc2","address3":"abc3","city":"ABC","district":"Jaunpur","state":"Up","country":"India","pin":"123456"},
+    "password":"212345",
+    "confirmPassword":"212345",
+    "mobile":"1999999990",
+    "limit":2,
+    "secretQuestion":["a","b"],
+    "custom":"test1"
+}]
+
+###
+POST  {{host}}/login
+Content-Type: application/json
+
+{
+    "email":"Ram@siyaram.com", 
+    "password":"212345" 
+}
+
+###
+GET {{host}}
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NWM1MmUxYTdhMjA2OTM4ZGVmODYwZSIsImVtYWlsIjoicmFtQHNpeWFyYW0uY29tIiwidXNlcm5hbWUiOiIyU2l5YSByYW0iLCJpYXQiOjE3MDA2NDM3MzQsImV4cCI6MTcwMDY0Mzc2NCwiYXVkIjoiNjU1YzUyZTFhN2EyMDY5MzhkZWY4NjBlIiwiaXNzIjoiU2l5YXJhbSIsInN1YiI6IlN1YmplY3RGb3JUb2tlbiIsImp0aSI6IjI5MjI2Mjg3Mjk5OTk5OTY3Mjk5MzU3MTcxMzI1NiJ9.uIc6ggZuAyCD8EvcQrhQhH9YjrYPzFY9X9rPFkIRErYuNqfBlo-ouNX5laxScs9ttd-g2j3RuzDFEuNB5Fo4Ng
+
+{
+    "email":"Ram@siyaram.com" 
+}
+
+###
+POST  {{host}}/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NGI4MzY0OGIxY2VlMTE2YTI3NzJlMSIsImVtYWlsIjoicmFtQHNpeWFyYW0uY29tIiwidXNlcm5hbWUiOiIyU2l5YSByYW0iLCJpYXQiOjE2OTk1ODY0MDcsImV4cCI6MTY5OTYxNTIwNywiYXVkIjoiNjU0YjgzNjQ4YjFjZWUxMTZhMjc3MmUxIiwiaXNzIjoiU2l5YXJhbSIsInN1YiI6IlN1YmplY3RGb3JUb2tlbiIsImp0aSI6IjQ3MjUxMDA3NTE5OTk5MTQ2OTQwMzAwMzk2NDU5NDQifQ.Soylh3oyh1DdV3gaq-qq6HNDb5HmFSLg5jmaDuu54JfSAvV0iTaDGJzULXEVqgRJOqx9HAGzQS80u-D0l7-gDQ" 
+}
+
+###
+DELETE {{host}}/user
+Content-Type: application/json
+
+{
+    "email":"4ram@siyaram.com" 
+}
+
+###
+DELETE  {{host}}/logout

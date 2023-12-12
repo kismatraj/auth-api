@@ -1,0 +1,52 @@
+@host=http://127.0.0.1:5001/api/v1/centre
+
+GET {{host}} 
+
+###
+POST {{host}}/import
+Content-Type: application/json
+
+[{
+  "_id":"RAM1",
+  "centreCode":"RAM1",
+  "centreName":"ABC Istitute1",
+  "address":{"address1":"261" },
+  "coordinator":{ 
+    "name":{"fname":"Shyam ", "mname":"Sunder","lname":"Das"},
+    "mobileNo":["9787898988","9787898988"],
+    "email":["abc@abc.abc"]
+  },
+  "es":{
+    "name":{"fname":"Raghav", "lname":"Singh"},
+    "mobileNo":["9787898988"],
+    "email":["abc@abc.abc"]
+  },
+  "test":"abc1"
+},
+{
+  "_id":"RAM2",
+  "centreCode":"RAM2",
+  "centreName":"ABC Istitute2",
+  "address":{"address1":"261" },
+  "coordinator":{ 
+    "name":{"fname":"Shyam ", "lname":"Sunder"},
+    "mobileNo":["9787898988"],
+    "email":["abc@abc.abc"]
+  },
+  "es":{
+    "name":{"fname":"Raghav", "lname":"Singh"},
+    "mobileNo":["9787898988"],
+    "email":["abc@abc.abc"]
+  },
+  "test":"abc2"
+}]
+
+###
+PATCH {{host}}
+
+###
+PUT {{host}}
+
+###
+DELETE  {{host}}
+
