@@ -11,8 +11,8 @@ const UserSchema = new mongoose.Schema(
       unique: true,
     },
     name: {
-      fname: { type: String, required: [true, "First name is required field"] },
-      mname: { type: String },
+      fName: { type: String, required: [true, "First name is required field"] },
+      mName: { type: String },
       lname: { type: String },
     },
     mobile: { type: String, required: [true, "Mobile is required field"] },
