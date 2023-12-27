@@ -2,10 +2,18 @@
 
 GET {{host}}
 
+
 ###
 POST {{host}}/single
 Content-Type: application/json
 
 {
-    "test":"test1"
+    "name":"Hari Kumar",
+    "fatherName":"Narshingh Kumar",
+    "motherName":"Reena Devi",
+    "courseName":"NextJS Course Advanced"
 }
+
+
+### Delete all records
+DELETE {{host}}
