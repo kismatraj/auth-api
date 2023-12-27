@@ -1,0 +1,11 @@
+@host=http://127.0.0.1:5001/api/v1/candidate
+
+GET {{host}}
+
+###
+POST {{host}}/single
+Content-Type: application/json
+
+{
+    "test":"test1"
+}

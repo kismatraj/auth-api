@@ -13,7 +13,7 @@ const UserSchema = new mongoose.Schema(
     name: {
       fName: { type: String, required: [true, "First name is required field"] },
       mName: { type: String },
-      lname: { type: String },
+      lName: { type: String },
     },
     mobile: { type: String, required: [true, "Mobile is required field"] },
     password: { type: String, required: [true, "Password is required field"] },
