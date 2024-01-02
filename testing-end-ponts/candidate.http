@@ -1,8 +1,7 @@
 @host=http://127.0.0.1:5001/api/v1/candidate
 
 GET {{host}}
-
-
+ 
 ###
 POST {{host}}/single
 Content-Type: application/json
@@ -13,7 +12,6 @@ Content-Type: application/json
     "motherName":"Reena Devi",
     "courseName":"NextJS Course Advanced"
 }
-
-
+ 
 ### Delete all records
 DELETE {{host}}

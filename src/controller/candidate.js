@@ -5,7 +5,7 @@ const validateSchema = require("../schemas/validation/candidate");
 module.exports = {
   get: async (req, res, next) => {
     const candidates = await service.getAll();
-    res.status(201).json({ status: "success", data: { candidates } });
+    res.status(201).json({ status: "success", data: candidates });
   },
 
   post: async (req, res, next) => {
